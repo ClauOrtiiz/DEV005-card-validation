@@ -5,10 +5,45 @@
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+      <header> <h2>VALIDEMOS TU TARJETA</h2></header>
+    <main>
+    <table>
+      <tr> 
+          <td>Número de tarjeta</td>
+      </tr>
+      <tr>
+          <td><input type="text"  id="NumeroTarjeta"/> </td>
+      </tr>
+        <tr>
+          <td>Fecha de Vto.</td>
+          <td>CVV</td>
+        </tr>
+        <tr>
+        <td> <input type="text"  id="Fecha"/>   </td>        
+        <td> <input type="text"  id="CVV"/>   </td>
+      </tr>
+
+      <tr>
+        <td>Nombre del Propietario</td>
+        <td> País </td>
+      </tr>
+      <tr>
+        <td> <input type="text"  id="propietario"/>  </td>
+        <td> <input type="text"  id="Pais"/> </td>
+      </tr>
+      </table>  
+      
+    </main>
+  
+
+    <footer>
+      <br>
+      <br>
+      <input type="button" id="siguiente" value="Siguiente">
+    </footer>
+
     <script src="index.js" type="module"></script>
   </body>
 </html>
