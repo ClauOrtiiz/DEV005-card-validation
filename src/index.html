@@ -3,47 +3,114 @@
   <head>
     <meta charset="utf-8">
     <title>Tarjeta de crédito válida</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-      <header> <h2>VALIDEMOS TU TARJETA</h2></header>
-    <main>
+  <div  class="barraPrincipal">
+    <img src="./imagenes/menuprincipal.png"  id="barra" alt="Menú principal"> 
+    </div>
+
+  <header id="title"> <b><h1>VALIDEMOS TU TARJETA</h1> </b> </header>
+<br>
+
+<!--Datos dinamicos de la Tarjeta Visible-->
+<div id ="datosDinamicosTarjetaVisible">
+  <img src="./imagenes/tarjetareversa.png"  id="tarjeta2" alt="tarjeta"> 
+  <img src="./imagenes/tarjetacara.png"   id="tarjeta1" alt="tarjeta">
+  <section class="datosDinamicos" id="textoEncima">
+  <p id ="numberDinamico"  type="number"
+  maxlength="16">0000-0000-0000-0000</p> 
+  <p id ="nameDinamico" type ="text"> Claudia Ortiz</p> 
+  <p id ="fechaDinamica" type = "month">2023-02</p>
+</section> 
+<p id ="cvvDinamico" type="month">000</p>
+</div>
+
+<div id="pantalla1" >
+<main>
+<br>
+    <form class="form" action="">
+      <!--tabla-->
     <table>
+      <tr>
+        <!--Date 01 name -->
+        <td><label 
+          for ="propietario">Propietario</label></td>
+      </tr>
+      <tr>
+        <td> <input 
+          type="text"
+          title="Incertar nombre del propietario"
+          class="form_input"
+          id="propietario"
+          placeholder="e.g Claudia Ortiz" /></td>
+      </tr>
+    
+      <!--Date 02 number -->
       <tr> 
-          <td>Número de tarjeta</td>
+          <td> <label for="NumeroTarjeta">Número de tarjeta</label><br> </td>
       </tr>
       <tr>
-          <td><input type="text"  id="NumeroTarjeta"/> </td>
+          <td><input 
+            class="form_input"
+            title="Ingresar 16 números"
+            id="cardNumber"
+            type="text"
+            maxlength="16"
+            placeholder="e.g 1243444567485555"/></td>
       </tr>
+
+    <!--Date 03 fecha y Date 04  CVV  -->
         <tr>
-          <td>Fecha de Vto.</td>
-          <td>CVV</td>
+          <td><label for="Fecha">Fecha de Vencimiento</label> </td>
+          <td><label for="CVV">CVV</label></td>
         </tr>
+
         <tr>
-        <td> <input type="text"  id="Fecha"/>   </td>        
-        <td> <input type="text"  id="CVV"/>   </td>
+        <td> <input 
+          type="month" 
+          class="form_input" 
+          id="cardDate" 
+          min="02-2023"
+          max="12-2029"
+          placeholder="2023-01" required/>
+        </td>        
+        <td> <input 
+          type="text" 
+          title="Ingrese 3 números"
+          class="form_input" 
+          id="cardCVV" 
+          maxlength="3"
+          placeholder="e.g 123"/></td>
       </tr>
-
-      <tr>
-        <td>Nombre del Propietario</td>
-        <td> País </td>
-      </tr>
-      <tr>
-        <td> <input type="text"  id="propietario"/>  </td>
-        <td> <input type="text"  id="Pais"/> </td>
-      </tr>
-      </table>  
-      
+    </table>  
+    </form>
     </main>
-  
 
-    <footer>
-      <br>
-      <br>
-      <input type="button" id="siguiente" value="Siguiente">
-    </footer>
+<!--Button validación -->
+  <footer>
+    <br>
+    <button type="button" id="Validar"> Validar</button>
+  </footer>
+  </div>
+<!--respuesta-->
+<section id ="validado" class="validado"  hidden>
+  <img src="./imagenes/validado.png" width = "90" height="90"  id="check" alt="complete icon">
+  <h1> ¡TARJETA VALIDA!</h1>
+  <p id="vistaNumeroValido"></p>
+  <p>Gracias por validar con nosotros</p>
+  <button id="volver1" > Nueva validación</button>
+  </section>
 
-    <script src="index.js" type="module"></script>
+  <section id ="invalidado" class="invalidado" hidden>
+    <img src="./imagenes/invalida.png"  width="120" height="90"  id="falso" alt="icono de invalido">
+    <h1> ¡NO VALIDO!</h1>
+    <h2><p id="vistaNumeroInvalido"></p></h2>
+    <p>La tarjeta ingresada no es valida, por favor vuelva a intentar.</p>
+    <button id="volver2" > Nueva validación</button>
+    </section>
+
+    <script src="./index.js" type="module" ></script>
   </body>
 </html>
