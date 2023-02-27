@@ -111,7 +111,6 @@ volver2.addEventListener("click", function () {
 
 // -- funcion maskify 
 const numberDinamico = document.getElementById("numberDinamico");
-
 inputCardNumber.addEventListener("input", function (e) {
 // -- ingresar elementos solo digitos ( Número de tarjeta) si no ingresa nada
   const soloDigitos = e.target.value.replace(/[^0-9]/g, '');
